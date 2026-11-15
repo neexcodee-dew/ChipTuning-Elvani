@@ -1,0 +1,193 @@
+{
+  "code": "sq",
+  "phrases": {
+    "Installation requires HTTPS or http://localhost.": "Instalimi kërkon HTTPS ose http://localhost.",
+    "On iPhone or iPad, tap Share, then Add to Home Screen.": "Në iPhone ose iPad, prek Share, pastaj Add to Home Screen.",
+    "If installation is available, open the browser menu and choose Install app or Add to Home Screen.": "Nëse ofrohet instalimi, hap menynë e shfletuesit dhe zgjidh Install app ose Add to Home Screen.",
+    "ChipTuning Elvani is installed.": "ChipTuning Elvani u instalua."
+  },
+  "chatbot": {
+    "title": "ChipTuning Elvani",
+    "subtitle": "Asistenti i kontaktit",
+    "panelLabel": "Chat me ChipTuning Elvani",
+    "open": "Hap chat-in",
+    "close": "Mbyll chat-in",
+    "welcome": "Përshëndetje! Mirë se erdhe te ChipTuning Elvani. Si mund të të ndihmojmë sot?",
+    "quickTitle": "Zgjidh një temë:",
+    "inputPlaceholder": "Shkruaj mesazhin...",
+    "inputLabel": "Shkruaj mesazhin",
+    "sendLabel": "Dërgo mesazhin",
+    "note": "Preferon person?",
+    "whatsapp": "Vazhdo në WhatsApp",
+    "typing": "Po përgatisim një përgjigje...",
+    "whatsappPrefix": "Përshëndetje ChipTuning Elvani, dua informacione.",
+    "whatsappHistoryPrefix": "Përshëndetje, po shkruaj nga faqja. Pyetjet e mia:",
+    "quickReplies": {
+      "chip": { "label": "Chip Tuning", "question": "chip" },
+      "stage1": { "label": "Stage 1", "question": "stage1" },
+      "stage2": { "label": "Stage 2", "question": "stage2" },
+      "diagnostics": { "label": "Diagnostikim", "question": "diagnostics" },
+      "book": { "label": "Rezervo termin", "question": "book" },
+      "price": { "label": "Sa kushton?", "question": "price" },
+      "calculator": { "label": "Kalkulatori", "href": "#performance" },
+      "whatsapp": { "label": "Kontakto në WhatsApp", "whatsapp": true }
+    },
+    "actions": {
+      "book": { "label": "Rezervo termin", "question": "book" },
+      "price": { "label": "Sa kushton?", "question": "price" },
+      "calculator": { "label": "Kalkulatori", "href": "#performance" },
+      "form": { "label": "Formulari", "href": "#contact" },
+      "whatsapp": { "label": "Vazhdo në WhatsApp", "whatsapp": true },
+      "stage1": { "label": "Stage 1", "question": "stage1" },
+      "stage2": { "label": "Stage 2", "question": "stage2" },
+      "diagnostics": { "label": "Diagnostikim", "question": "diagnostics" },
+      "services": { "label": "Shërbimet", "question": "services" }
+    },
+    "questions": {
+      "chip": "Dua informacione për Chip Tuning.",
+      "stage1": "Dua informacione për Stage 1.",
+      "stage2": "Dua informacione për Stage 2.",
+      "diagnostics": "Dua diagnostikim për veturën time.",
+      "book": "Dua të rezervoj një termin.",
+      "price": "Sa kushton?",
+      "services": "Çfarë shërbimesh ofroni?"
+    },
+    "responses": {
+      "greeting": "Përshëndetje! Mund të të ndihmoj me shërbimet, çmimin, terminin ose vendndodhjen. Çfarë të intereson?",
+      "thanks": "S’ka përse! Nëse të duhet diçka tjetër, jam këtu.",
+      "price": "Çmimi varet nga marka, modeli, motori dhe shërbimi i kërkuar, prandaj nuk japim çmim të njëjtë për të gjithë. Na dërgo markën, modelin dhe motorin dhe të japim ofertë të saktë.",
+      "appointment": "Për të caktuar termin na duhen: emri, numri i telefonit, marka/modeli/motori dhe shërbimi që të duhet. Mund t’i plotësosh në formular ose t’i dërgosh direkt në WhatsApp.",
+      "hours": "Orarin e punës e konfirmojmë gjatë caktimit të terminit. Na telefono në {phone} ose na shkruaj në WhatsApp.",
+      "location": "Ndodhemi në fshatin Turi, Serbi. Harta është te seksioni Kontakti. Para se të vish, caktoje terminin që të të presim.",
+      "contact": "Na gjen në {phone} (telefon dhe WhatsApp) dhe në Instagram te @elvani_tuning.",
+      "stage2": "Stage 2 është përshtatje e personalizuar për vetura me ndryshime hardware, si downpipe, marrje ajri ose intercooler. Rezultatet varen nga pjesët e montuara dhe gjendja e motorit.",
+      "stage1": "Stage 1 është optimizim i softuerit për vetura standarde, pa ndryshime hardware. Synon më shumë fuqi dhe çift, dhe ngasje më të rehatshme. Rezultatet varen nga motori dhe gjendja e veturës.",
+      "stageGeneral": "Kemi dy nivele: Stage 1 për vetura standarde dhe Stage 2 për vetura me pjesë të ndryshuara. Cilin dëshiron ta shohësh?",
+      "chip": "Chip Tuning dhe ECU Remapping do të thotë rikalibrim i të dhënave të karburantit, presionit të turbos dhe ndezjes, për më shumë fuqi dhe efikasitet. Çdo veturë vlerësohet para punës.",
+      "dpf": "Për DPF bëjmë diagnostikim dhe zgjidhje të miratuara, aty ku lejohet me ligj. Na trego simptomat dhe veturën, dhe ta shohim.",
+      "egr": "Për EGR bëjmë diagnostikim dhe zgjidhje në përputhje me rregullat, aty ku lejohet me ligj.",
+      "adblue": "Diagnostikojmë dhe riparojmë sistemet AdBlue/SCR. Na trego çfarë mesazhi shfaq vetura.",
+      "gearbox": "DSG / TCU Tuning synon ndërrime më të shpejta dhe më të buta, dhe përballim më të mirë të çiftit në kutitë automatike.",
+      "diagnostics": "Po, bëjmë diagnostikim: leximin e kodeve të gabimit, interpretimin dhe udhëzime për riparim, si dhe kontroll të motorit, transmisionit dhe elektronikës.",
+      "coding": "Bëjmë coding dhe programim elektronik. Na trego markën dhe çfarë dëshiron të aktivizosh ose ndryshosh.",
+      "calculator": "Në seksionin Performance ke kalkulatorin: zgjidh markën, modelin dhe motorin dhe merr një vlerësim orientues. Nuk është garanci, por jep një ide.",
+      "safety": "Para punës vlerësohet gjendja teknike e veturës dhe vendoset nëse optimizimi ka kuptim. Për detaje për rastin tënd, na pyet drejtpërdrejt.",
+      "services": "Ofrojmë: Stage 1 dhe 2, ECU Remapping, DSG/TCU Tuning, DPF/EGR (aty ku lejohet), AdBlue, diagnostikim dhe coding. Cili të intereson?",
+      "fallback": "Nuk e kuptova plotësisht. Mund të pyesësh për shërbimet, Stage 1/2, çmimin, terminin ose vendndodhjen.",
+      "escalate": "Nuk jam i sigurt si të përgjigjem këtu. Më mirë t’i shkruash drejtpërdrejt ekipit, që të përgjigjet për rastin tënd.",
+      "empty": "Shkruaj një pyetje ose zgjidh një temë nga lista.",
+      "error": "Mesazhi nuk u dërgua. Provo përsëri ose na kontakto në WhatsApp."
+    }
+  },
+  "legal": {
+    "privacy": {
+      "title": "Politika e Privatësisë",
+      "intro": "Ky është një model fillestar për rishikim nga pronari i biznesit. Plotësoni të gjitha fushat në kllapa dhe verifikoni përmbajtjen me këshilltarin tuaj ligjor para publikimit.",
+      "sections": [
+        [
+          "Kush është përgjegjës për të dhënat?",
+          "Kontrolluesi i të dhënave: [[EMRI I PLOTË / EMRI I BIZNESIT]]. Adresa: [[ADRESA POSTARE]]. Email: [[EMAIL PËR PRIVATËSI]]. Telefon: [[NUMRI I TELEFONIT]]. Plotësoni të dhënat e sakta të subjektit që drejton faqen."
+        ],
+        [
+          "Çfarë të dhënash mund të marrim?",
+          "Kur na kontaktoni ose kërkoni termin, mund të marrim emrin, numrin e telefonit, emailin, markën dhe modelin e veturës, informacionin e motorit dhe përmbajtjen e mesazhit. Faqja përdor ruajtje lokale të domosdoshme për të mbajtur mend zgjedhjen e pëlqimit. Preferenca e gjuhës ruhet vetëm nëse aktivizoni cookies funksionale."
+        ],
+        [
+          "Pse i përdorim të dhënat?",
+          "Përdorim informacionin e dërguar për t'iu përgjigjur kërkesave, për të diskutuar ose organizuar termin dhe për të ofruar shërbimet e kërkuara. Përpara publikimit, pronari duhet të përcaktojë bazën ligjore për secilin qëllim, afatin e ruajtjes dhe procesorët që përdoren."
+        ],
+        [
+          "WhatsApp dhe ofrues të tjerë",
+          "Kur dërgoni formularin, faqja përgatit një mesazh dhe hap WhatsApp vetëm pas veprimit tuaj. WhatsApp dhe shërbimet e tjera të jashtme kanë politikat e tyre të privatësisë. Pronari duhet të listojë ofruesit, transferimet ndërkombëtare dhe masat përkatëse, nëse zbatohen: [[LISTA E OFRUESVE DHE MASAVE]]."
+        ],
+        [
+          "Afati i ruajtjes",
+          "Ruajmë të dhënat vetëm për aq kohë sa nevojitet për qëllimin përkatës ose sa kërkohet nga ligji. Pronari duhet të përcaktojë afatet konkrete për kërkesat e klientëve, dokumentet e shërbimit dhe të dhënat e pëlqimit: [[AFATET E RUAJTJES]]."
+        ],
+        [
+          "Të drejtat tuaja dhe kontaktimi",
+          "Në varësi të ligjit që zbatohet, mund të keni të drejta për qasje, korrigjim, fshirje, kufizim, kundërshtim ose tërheqje të pëlqimit. Për ushtrimin e të drejtave, kontaktoni [[EMAIL PËR PRIVATËSI]]. Mund të paraqisni ankesë edhe pranë autoritetit kompetent të mbrojtjes së të dhënave: [[EMRI DHE KONTAKTI I AUTORITETIT]]. Pronari duhet ta verifikojë këtë informacion për juridiksionet përkatëse."
+        ],
+        [
+          "Përditësimet",
+          "Kjo faqe mund të përditësohet kur ndryshojnë shërbimet ose praktikat e përpunimit. Data e hyrjes në fuqi: [[DATA]]."
+        ]
+      ]
+    },
+    "cookies": {
+      "title": "Politika e Cookies",
+      "intro": "Ky është model fillestar për plotësim dhe rishikim. Përshkrimet duhet të përputhen me teknologjitë që përdoren realisht në versionin e publikuar të faqes.",
+      "sections": [
+        [
+          "Çfarë është ruajtur në shfletues?",
+          "Faqja ruan një zgjedhje pëlqimi me kategoritë e zgjedhura, kohën e zgjedhjes dhe versionin e njoftimit. Kjo ruajtje është e nevojshme për të zbatuar zgjedhjen tuaj. Preferenca e gjuhës ruhet vetëm nëse lejoni cookies funksionale."
+        ],
+        [
+          "Cookies striktisht të nevojshme",
+          "Gjithmonë aktive. Mbajnë mend vendimin dhe versionin e pëlqimit, në mënyrë që njoftimi të mos shfaqet në çdo vizitë dhe zgjedhjet tuaja të respektohen. Nuk mund të çaktivizohen nga paneli."
+        ],
+        [
+          "Cookies funksionale",
+          "Opsionale. Ruajnë preferencën e gjuhës dhe cilësime të tjera që mund të shtohen. Çaktivizimi i tyre nuk e pengon përdorimin bazë të faqes."
+        ],
+        [
+          "Cookies analitike",
+          "Opsionale. Mund të përdoren për të kuptuar trafikun dhe mënyrën si përdoret faqja. Nuk përfshihet asnjë mjet analitik në këtë version. Nëse shtohet më vonë, pronari duhet të listojë emrin, ofruesin, qëllimin, jetëgjatësinë dhe transferimet përpara aktivizimit."
+        ],
+        [
+          "Cookies të marketingut",
+          "Opsionale. Mund të përdoren për matje reklamash ose gjurmim marketingu. Nuk përfshihet asnjë mjet marketingu në këtë version. Çdo mjet i ardhshëm duhet të dokumentohet këtu dhe të bllokohet derisa të jepet pëlqimi."
+        ],
+        [
+          "Ndryshimi ose tërheqja e pëlqimit",
+          "Mund ta ndryshoni ose tërhiqni zgjedhjen kurdoherë përmes lidhjes “Cilësimet e cookies” në fund të faqes. Ndryshimi ruhet me kohën dhe versionin e ri të pëlqimit. Data e rishikimit: [[DATA]]."
+        ]
+      ]
+    },
+    "terms": {
+      "title": "Kushtet e Përdorimit",
+      "intro": "Ky është një model i redaktueshëm, jo kushtet përfundimtare të biznesit. Pronari duhet të plotësojë fushat në kllapa dhe të marrë rishikim ligjor për vendet ku ofrohen shërbimet.",
+      "sections": [
+        [
+          "Subjekti dhe kontaktet",
+          "Shërbimet ofrohen nga [[EMRI I PLOTË / EMRI I BIZNESIT]], me adresë [[ADRESA]] dhe kontakt [[EMAIL / TELEFON]]. Plotësoni identitetin dhe të dhënat zyrtare vetëm pasi t'i verifikoni."
+        ],
+        [
+          "Informacioni në faqe",
+          "Përshkrimet dhe kalkulatori i performancës janë informuese dhe orientuese. Vlerësimet nuk janë ofertë, diagnozë ose garanci rezultati; rezultati real varet nga vetura, motori, gjendja teknike, pajisjet dhe kushtet e përdorimit."
+        ],
+        [
+          "Kërkesa për termin dhe porositë",
+          "Dërgimi i formularit hap WhatsApp me një kërkesë për kontakt dhe nuk krijon vetvetiu kontratë ose termin të konfirmuar. Termini dhe puna konfirmohen veçmas nga biznesi. Pronari duhet të shtojë kushtet e ofertës, pagesës, anulimit dhe garancisë, nëse ka: [[KUSHTET KOMERCIALE]]."
+        ],
+        [
+          "Përdorimi i ligjshëm i automjetit",
+          "Klienti duhet të sigurohet që çdo modifikim dhe përdorim i automjetit përputhet me kërkesat e sigurisë, emisioneve, kontrollit teknik dhe ligjet lokale. Para punës duhet të sqarohen kufizimet dhe miratimet që zbatohen për rastin konkret."
+        ],
+        [
+          "Përgjegjësia dhe ligji i zbatueshëm",
+          "Kufijtë e përgjegjësisë dhe ligji i zbatueshëm varen nga juridiksioni dhe nuk përcaktohen në këtë model. Pronari duhet t'i plotësojë pas këshillimit ligjor: [[LIGJI / FORUMI / RREGULLAT E PËRGJEGJËSISË]]. Asgjë këtu nuk synon të përjashtojë të drejta që ligji nuk lejon të përjashtohen."
+        ],
+        [
+          "Përditësimet",
+          "Kushtet e fundit u përditësuan më: [[DATA]]. Pronari duhet të publikojë datën dhe të mbajë versionet e mëparshme kur kërkohet."
+        ]
+      ]
+    }
+  },
+  "meta": {
+    "title": "ChipTuning Elvani | ECU Remapping dhe Performancë",
+    "description": "ChipTuning Elvani – Chip Tuning, ECU Remapping, Stage 1, Stage 2, Coding dhe diagnostikim profesional i veturave.",
+    "ogTitle": "ChipTuning Elvani",
+    "ogDescription": "Më shumë performancë. Më shumë precizitet."
+  },
+  "attributes": {
+    "Shqip": "Shqip",
+    "English": "Anglisht",
+    "Srpski, latinica": "Serbisht, alfabet latin",
+    "Zgjidh gjuh?n": "Zgjidh gjuh?n",
+    "Zgjidh gjuhën": "Zgjidh gjuhën",
+    "Navigimi kryesor": "Navigimi kryesor",
+    "Informacion ligjor": "Informacion ligjor"
+  }
+}
