@@ -1,10 +1,19 @@
 (() => {
   "use strict";
 
+  // Replace a node with a clean clone so no other script can leave a second
+  // click handler on it (a double toggle would open and instantly close the chat).
+  function fresh(element) {
+    if (!element || !element.parentNode) return element;
+    const clone = element.cloneNode(true);
+    element.replaceWith(clone);
+    return clone;
+  }
+
   const widget = document.querySelector(".chat-widget");
   const panel = document.getElementById("chatPanel");
-  const launcher = document.getElementById("chatLauncher");
-  const closeButton = document.getElementById("chatClose");
+  const launcher = fresh(document.getElementById("chatLauncher"));
+  const closeButton = fresh(document.getElementById("chatClose"));
   const form = document.getElementById("chatForm");
   const input = document.getElementById("chatInput");
   const messages = document.getElementById("chatMessages");
@@ -14,13 +23,18 @@
   const whatsappNumber = "381631222633";
   const userLog = [];
   let missedReplies = 0;
+  let isOpen = false;
 
   function pathValue(object, path) {
     return path.split(".").reduce((value, part) => value?.[part], object);
   }
 
   function chatDictionary() {
-    return window.I18N?.getDictionary()?.chatbot || {};
+    try {
+      return window.I18N?.getDictionary()?.chatbot || {};
+    } catch {
+      return {};
+    }
   }
 
   function tr(path) {
@@ -42,14 +56,23 @@
   }
 
   function toggleChat(force) {
-    const open = typeof force === "boolean" ? force : !panel.classList.contains("open");
-    panel.classList.toggle("open", open);
-    panel.setAttribute("aria-hidden", String(!open));
-    launcher.setAttribute("aria-expanded", String(open));
-    launcher.setAttribute("aria-label", tr(open ? "close" : "open"));
-    panel.setAttribute("aria-label", tr("panelLabel"));
-    closeButton.setAttribute("aria-label", tr("close"));
-    if (open) setTimeout(() => input.focus(), 150);
+    isOpen = typeof force === "boolean" ? force : !isOpen;
+
+    // The panel state is set first, so nothing below can stop it from opening.
+    panel.classList.toggle("open", isOpen);
+    panel.setAttribute("aria-hidden", String(!isOpen));
+    launcher.setAttribute("aria-expanded", String(isOpen));
+
+    try {
+      launcher.setAttribute("aria-label", tr(isOpen ? "close" : "open"));
+      panel.setAttribute("aria-label", tr("panelLabel"));
+      closeButton.setAttribute("aria-label", tr("close"));
+    } catch { /* labels are optional */ }
+
+    if (isOpen) {
+      scrollToLatest();
+      setTimeout(() => input.focus({ preventScroll: true }), 350);
+    }
   }
 
   function makeAction(actionKey) {
@@ -112,7 +135,7 @@
     form.querySelector('button[type="submit"]')?.setAttribute("aria-label", tr("sendLabel"));
     panel.setAttribute("aria-label", tr("panelLabel"));
     closeButton.setAttribute("aria-label", tr("close"));
-    launcher.setAttribute("aria-label", tr(panel.classList.contains("open") ? "close" : "open"));
+    launcher.setAttribute("aria-label", tr(isOpen ? "close" : "open"));
     messages.querySelectorAll(".chat-message.bot[data-chat-response]").forEach(renderBotMessage);
     messages.querySelectorAll(".chat-typing").forEach(element => {
       element.setAttribute("aria-label", tr("typing"));
@@ -202,7 +225,7 @@
     setTimeout(() => {
       typing.remove();
       addBotMessage(result.response, result.actions);
-    }, 550);
+    }, 700);
   }
 
   widget.addEventListener("click", event => {
@@ -223,7 +246,7 @@
 
   launcher.addEventListener("click", () => toggleChat());
   closeButton.addEventListener("click", () => toggleChat(false));
-  document.addEventListener("keydown", event => { if (event.key === "Escape") toggleChat(false); });
+  document.addEventListener("keydown", event => { if (event.key === "Escape" && isOpen) toggleChat(false); });
   form.addEventListener("submit", event => {
     event.preventDefault();
     const text = input.value;
@@ -233,5 +256,10 @@
   });
   panel.querySelector("#chatWaLink")?.addEventListener("click", function () { this.href = whatsappLink(); });
   window.addEventListener("elvani:languagechange", renderLanguage);
-  window.I18N?.ready.then(renderLanguage);
+
+  try {
+    const ready = window.I18N?.ready;
+    if (ready && typeof ready.then === "function") ready.then(renderLanguage).catch(() => {});
+    else renderLanguage();
+  } catch { /* the chat still works without translations */ }
 })();

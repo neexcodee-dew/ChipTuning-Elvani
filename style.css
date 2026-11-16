@@ -187,14 +187,82 @@ p{margin-bottom:1em}
 .footer-cookie-settings:hover{color:var(--accent-light)}
 .footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:15px;width:min(1200px,92%);margin-inline:auto;padding:22px 0;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
 
-/* WhatsApp float */
-.wa-float{position:fixed;left:22px;bottom:22px;z-index:90;display:grid;place-items:center;width:56px;height:56px;color:#04180d;background:#1fcf6d;font-size:1.5rem;border-radius:50%;box-shadow:0 10px 30px rgba(31,207,109,.3);transition:var(--t)}
-.wa-float:hover{transform:scale(1.09)}
+/* WhatsApp float (single definition) */
+.wa-float{
+  position:fixed;
+  left:calc(22px + env(safe-area-inset-left,0px));
+  bottom:calc(22px + env(safe-area-inset-bottom,0px));
+  z-index:90;
+  display:grid;
+  place-items:center;
+  width:56px;
+  height:56px;
+  color:#04180d;
+  background:#1fcf6d;
+  font-size:1.5rem;
+  border-radius:50%;
+  box-shadow:0 10px 30px rgba(31,207,109,.3);
+  transition:transform .22s ease, box-shadow .22s ease;
+}
+.wa-float:hover{
+  transform:scale(1.09) translateY(-2px);
+  box-shadow:0 14px 36px rgba(31,207,109,.45);
+}
 
-/* Reveal */
-.reveal{opacity:0;transition:opacity .6s ease}
-.reveal.in{opacity:1}
+/* ================================================================
+   ANIMATIONS (single source of truth for page animations)
+   ================================================================ */
 
+/* Scroll reveal: fade + slide (script.js adds .in) */
+.reveal{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1), background .25s ease;
+  will-change:opacity, transform;
+}
+.reveal.in{
+  opacity:1;
+  transform:none;
+}
+
+/* Service cards: hover lift */
+.service-card{
+  transition:transform .3s ease, box-shadow .3s ease, background .3s ease, border-color .3s ease;
+}
+.service-card:hover{
+  transform:translateY(-6px);
+  box-shadow:inset 0 0 0 1px rgba(47,128,255,.3);
+}
+
+/* Before/after bars: fill animates when the block is revealed */
+.ba-grid.in .ba-bar span{
+  transform-origin:left center;
+  animation:barGrow 1.2s .3s ease-out backwards;
+}
+@keyframes barGrow{
+  from{ transform:scaleX(0); }
+  to  { transform:scaleX(1); }
+}
+
+/* Process steps: staggered reveal when the list gets .in */
+.steps.in li{ animation:stepIn .6s ease-out backwards; }
+.steps.in li:nth-child(1){ animation-delay:.05s; }
+.steps.in li:nth-child(2){ animation-delay:.15s; }
+.steps.in li:nth-child(3){ animation-delay:.25s; }
+.steps.in li:nth-child(4){ animation-delay:.35s; }
+@keyframes stepIn{
+  from{ opacity:0; transform:translateY(14px); }
+  to  { opacity:1; transform:none; }
+}
+
+/* Stat numbers: gentle glow pulse */
+.stat-num{ animation:statGlow 4s ease-in-out infinite; }
+@keyframes statGlow{
+  0%,100%{ text-shadow:0 0 0 rgba(47,128,255,0); }
+  50%    { text-shadow:0 0 18px rgba(47,128,255,.35); }
+}
+
+/* Responsive */
 @media (max-width:900px){
   .calculator,.contact-grid,.about-grid{grid-template-columns:1fr}
   .about-grid{gap:30px}
@@ -222,13 +290,14 @@ p{margin-bottom:1em}
   .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
   .footer-grid{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column}
-  
-  /* Rregullim për butonat fiks në ekranet e telefonave */
-  .wa-float{width:50px;height:50px;left:15px;bottom:85px;}
+
+  /* WhatsApp + chat on phones are laid out by the speed-dial menu in index.html */
 }
+
+/* Reduced motion (single block) */
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition-duration:.01ms!important}
-  .reveal{opacity:1}
+  .reveal{opacity:1;transform:none}
 }
 
 /* Process steps */
